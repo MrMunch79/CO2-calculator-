@@ -1,0 +1,255 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CO₂ Dagsvalg</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+    }
+    .section {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+    .section h2 {
+      margin-top: 0;
+    }
+    label {
+      display: block;
+      margin: 8px 0 4px;
+      text-align: left;
+    }
+    select {
+      width: 100%;
+      padding: 5px;
+      font-size: 1em;
+    }
+    .bar {
+      width: 100%;
+      height: 20px;
+      background-color: #ddd;
+      margin-top: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0%;
+      background-color: green;
+      transition: width 0.5s, background-color 0.5s;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Planlæg din dag med CO₂ i tankerne!</h1>
+    <p>Vælg dine aktiviteter, og se hvordan dine valg påvirker dit samlede CO₂-aftryk.</p>
+    
+    <!-- Transport Section -->
+    <div class="section">
+      <h2>Transport</h2>
+      <label for="transport">Transport til skole:</label>
+      <select id="transport">
+        <option value="0">Cykel (0 kg CO₂)</option>
+        <option value="1.2">Tog (1.2 kg CO₂)</option>
+        <option value="1.5">Bus (1.5 kg CO₂)</option>
+        <option value="2">Minibus (2 kg CO₂)</option>
+        <option value="3">Bil (3 kg CO₂)</option>
+        <option value="2.5">Knallert (2.5 kg CO₂)</option>
+      </select>
+    </div>
+    
+    <!-- Gaming Section -->
+    <div class="section">
+      <h2>Gaming</h2>
+      
+      <!-- Gaming Session 1 -->
+      <h3>Session 1</h3>
+      <label for="gamingPlatform1">Gaming Platform 1:</label>
+      <select id="gamingPlatform1">
+        <option value="0">Ingen</option>
+        <option value="0.2">Mobil (0.2 kg/h)</option>
+        <option value="0.5">Tablet (0.5 kg/h)</option>
+        <option value="0.8">PlayStation (0.8 kg/h)</option>
+        <option value="1.5">PC (1.5 kg/h)</option>
+      </select>
+      
+      <label for="game1">Spil 1:</label>
+      <select id="game1">
+        <option value="0">Ingen</option>
+        <option value="0.5">Minecraft (0.5 kg/h)</option>
+        <option value="0.8">Roblox (0.8 kg/h)</option>
+        <option value="1">Fortnite (1 kg/h)</option>
+        <option value="1.2">CS:GO (1.2 kg/h)</option>
+      </select>
+      
+      <label for="timeGaming1">Tid brugt (timer):</label>
+      <select id="timeGaming1">
+        <option value="0">0 timer</option>
+        <option value="1">1 time</option>
+        <option value="2">2 timer</option>
+        <option value="3">3 timer</option>
+      </select>
+      
+      <!-- Gaming Session 2 -->
+      <h3>Session 2</h3>
+      <label for="gamingPlatform2">Gaming Platform 2:</label>
+      <select id="gamingPlatform2">
+        <option value="0">Ingen</option>
+        <option value="0.2">Mobil (0.2 kg/h)</option>
+        <option value="0.5">Tablet (0.5 kg/h)</option>
+        <option value="0.8">PlayStation (0.8 kg/h)</option>
+        <option value="1.5">PC (1.5 kg/h)</option>
+      </select>
+      
+      <label for="game2">Spil 2:</label>
+      <select id="game2">
+        <option value="0">Ingen</option>
+        <option value="0.5">Minecraft (0.5 kg/h)</option>
+        <option value="0.8">Roblox (0.8 kg/h)</option>
+        <option value="1">Fortnite (1 kg/h)</option>
+        <option value="1.2">CS:GO (1.2 kg/h)</option>
+      </select>
+      
+      <label for="timeGaming2">Tid brugt (timer):</label>
+      <select id="timeGaming2">
+        <option value="0">0 timer</option>
+        <option value="1">1 time</option>
+        <option value="2">2 timer</option>
+        <option value="3">3 timer</option>
+      </select>
+    </div>
+    
+    <!-- Streaming Section -->
+    <div class="section">
+      <h2>Streaming</h2>
+      <label for="streamingDevice">Streaming Enhed:</label>
+      <select id="streamingDevice">
+        <option value="0">Ingen</option>
+        <option value="0.1">Mobil (0.1 kg/h)</option>
+        <option value="0.2">Tablet (0.2 kg/h)</option>
+        <option value="0.5">PC (0.5 kg/h)</option>
+      </select>
+      
+      <label for="streamingService">Streaming Tjeneste:</label>
+      <select id="streamingService">
+        <option value="0">Ingen</option>
+        <option value="0.2">Netflix (0.2 kg/h)</option>
+        <option value="0.2">Disney+ (0.2 kg/h)</option>
+        <option value="0.3">HBO (0.3 kg/h)</option>
+        <option value="0.3">TV2 (0.3 kg/h)</option>
+        <option value="0.1">DR (0.1 kg/h)</option>
+      </select>
+      
+      <label for="timeStreaming">Tid brugt på streaming (timer):</label>
+      <select id="timeStreaming">
+        <option value="0">0 timer</option>
+        <option value="1">1 time</option>
+        <option value="2">2 timer</option>
+        <option value="3">3 timer</option>
+      </select>
+    </div>
+    
+    <!-- Sociale Medier Section -->
+    <div class="section">
+      <h2>Sociale Medier</h2>
+      <label for="socialDevice">Sociale Medier Enhed:</label>
+      <select id="socialDevice">
+        <option value="0">Ingen</option>
+        <option value="0.1">Mobil (0.1 kg/h)</option>
+        <option value="0.2">Tablet (0.2 kg/h)</option>
+      </select>
+      
+      <label for="socialPlatform">Social Platform:</label>
+      <select id="socialPlatform">
+        <option value="0">Ingen</option>
+        <option value="0.05">Instagram (0.05 kg/h)</option>
+        <option value="0.06">Facebook (0.06 kg/h)</option>
+        <option value="0.07">TikTok (0.07 kg/h)</option>
+        <option value="0.05">Reddit (0.05 kg/h)</option>
+        <option value="0.04">Discord (0.04 kg/h)</option>
+      </select>
+      
+      <label for="timeSocial">Tid brugt på sociale medier (timer):</label>
+      <select id="timeSocial">
+        <option value="0">0 timer</option>
+        <option value="1">1 time</option>
+        <option value="2">2 timer</option>
+        <option value="3">3 timer</option>
+      </select>
+    </div>
+    
+    <button onclick="beregnCO2()">Beregn CO₂-aftryk</button>
+    
+    <h2>Dit daglige CO₂-aftryk: <span id="co2-output">0</span> kg</h2>
+    
+    <div class="bar">
+      <div class="bar-fill" id="co2-bar"></div>
+    </div>
+  </div>
+  
+  <script>
+    function beregnCO2() {
+      // Transport
+      let transport = parseFloat(document.getElementById("transport").value);
+      
+      // Gaming Session 1
+      let gamingPlatform1 = parseFloat(document.getElementById("gamingPlatform1").value);
+      let game1 = parseFloat(document.getElementById("game1").value);
+      let timeGaming1 = parseFloat(document.getElementById("timeGaming1").value);
+      let session1 = (gamingPlatform1 + game1) * timeGaming1;
+      
+      // Gaming Session 2
+      let gamingPlatform2 = parseFloat(document.getElementById("gamingPlatform2").value);
+      let game2 = parseFloat(document.getElementById("game2").value);
+      let timeGaming2 = parseFloat(document.getElementById("timeGaming2").value);
+      let session2 = (gamingPlatform2 + game2) * timeGaming2;
+      
+      // Streaming
+      let streamingDevice = parseFloat(document.getElementById("streamingDevice").value);
+      let streamingService = parseFloat(document.getElementById("streamingService").value);
+      let timeStreaming = parseFloat(document.getElementById("timeStreaming").value);
+      let streaming = (streamingDevice + streamingService) * timeStreaming;
+      
+      // Sociale Medier
+      let socialDevice = parseFloat(document.getElementById("socialDevice").value);
+      let socialPlatform = parseFloat(document.getElementById("socialPlatform").value);
+      let timeSocial = parseFloat(document.getElementById("timeSocial").value);
+      let social = (socialDevice + socialPlatform) * timeSocial;
+      
+      // Samlet CO₂
+      let totalCO2 = transport + session1 + session2 + streaming + social;
+      
+      document.getElementById("co2-output").innerText = totalCO2.toFixed(1);
+      
+      // Visualiseringsbjælke (antager 15 kg som maksimum for skalering)
+      let percentage = Math.min((totalCO2 / 15) * 100, 100);
+      let bar = document.getElementById("co2-bar");
+      bar.style.width = percentage + "%";
+      
+      if(totalCO2 < 5) {
+        bar.style.backgroundColor = "green";
+      } else if(totalCO2 < 10) {
+        bar.style.backgroundColor = "orange";
+      } else {
+        bar.style.backgroundColor = "red";
+      }
+    }
+  </script>
+</body>
+</html>
